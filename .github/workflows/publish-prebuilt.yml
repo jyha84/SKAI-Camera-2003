@@ -1,0 +1,61 @@
+name: Publish verified prebuilt APK
+on:
+  workflow_dispatch:
+    inputs:
+      blob_sha:
+        description: Git blob containing the prebuilt APK
+        required: true
+        type: string
+      sha256:
+        description: Expected SHA256 of APK bytes
+        required: true
+        type: string
+      tag:
+        description: Existing release tag
+        required: true
+        default: v0.10.0
+        type: string
+      apk_name:
+        description: APK asset filename
+        required: true
+        default: SKAI-Camera-2003-v0.10-StarTAC.apk
+        type: string
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/github-script@v7
+        env:
+          APK_BLOB_SHA: ${{ inputs.blob_sha }}
+          APK_SHA256: ${{ inputs.sha256 }}
+          RELEASE_TAG: ${{ inputs.tag }}
+          APK_NAME: ${{ inputs.apk_name }}
+        with:
+          script: |
+            const crypto = require('crypto');
+            const { owner, repo } = context.repo;
+            const name = process.env.APK_NAME;
+            if (!/^[A-Za-z0-9._-]+\.apk$/.test(name)) throw new Error('Invalid APK filename');
+            const { data: blob } = await github.rest.git.getBlob({ owner, repo, file_sha: process.env.APK_BLOB_SHA });
+            const bytes = Buffer.from(blob.content, 'base64');
+            const hash = crypto.createHash('sha256').update(bytes).digest('hex');
+            if (hash !== process.env.APK_SHA256.toLowerCase()) throw new Error('APK checksum mismatch');
+            const { data: release } = await github.rest.repos.getReleaseByTag({ owner, repo, tag: process.env.RELEASE_TAG });
+            const checksum = Buffer.from(`${hash}  ${name}\n`, 'utf8');
+            for (const [assetName, data] of [[name, bytes], [name + '.sha256', checksum]]) {
+              const old = release.assets.find(asset => asset.name === assetName);
+              if (old) {
+                if (old.state === 'uploaded' && old.size === data.length) {
+                  core.info('Already uploaded: ' + assetName);
+                  continue;
+                }
+                if (old.state !== 'starter') throw new Error('Existing asset requires review: ' + assetName);
+                await github.rest.repos.deleteReleaseAsset({ owner, repo, asset_id: old.id });
+              }
+              const result = await github.rest.repos.uploadReleaseAsset({ owner, repo, release_id: release.id,
+                name: assetName, data, headers: { 'content-type': 'application/octet-stream', 'content-length': data.length } });
+              core.info(result.data.browser_download_url);
+            }
