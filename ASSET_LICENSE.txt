@@ -1,0 +1,38 @@
+SKAI phone skin asset attribution
+
+Source: Samsung SGH-X100.jpg by putnik (own work)
+https://commons.wikimedia.org/wiki/File:Samsung_SGH-X100.jpg
+Original license: Creative Commons Attribution-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-sa/3.0/
+
+Changes: AI-assisted image editing; front-facing geometry, brushed silver finish,
+SKAI branding, blank LCD, adjusted handset/button contours, dark background.
+Adapted asset: app/src/main/res/drawable-nodpi/phone_skin.png
+This adapted asset is distributed under CC BY-SA 3.0 with attribution to putnik.
+This notice applies to the image asset; application code is not part of that asset.
+
+Additional photographic skin adaptations (v0.8)
+
+StarTAC source: File:Startac 130 Movistar.jpg
+https://commons.wikimedia.org/wiki/File:Startac_130_Movistar.jpg
+Artist: Myself (as credited in Wikimedia Commons metadata); own work.
+License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Adapted asset: app/src/main/res/drawable-nodpi/phone_startac.png
+Changes: AI-assisted frontal view, dark background, SKAI branding, shortened lid,
+enlarged blank LCD and camera controls. Adaptation distributed under CC BY 4.0.
+
+Nokia source: File:Nokia 3310.png by J-P Kärnä
+https://commons.wikimedia.org/wiki/File:Nokia_3310.png
+License: CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/
+Adapted asset: app/src/main/res/drawable-nodpi/phone_nokia.png
+Changes: AI-assisted photo editing, larger blank LCD, SKAI branding,
+adjusted handset proportions and dark background.
+Adaptation distributed under CC BY-SA 3.0 with attribution to J-P Kärnä.
+These licenses apply to the respective image assets, not the application code.
+
+v0.9 changes: handset wordmarks replaced with custom thin, wide geometric SKAI lettering,
+inspired by early-2000s Korean phone branding. Existing image license terms continue.
+
+v0.10 StarTAC: re-adapted original Startac 130 Movistar.jpg to restore long flip lid,
+small landscape LCD, dense numeric keys and two rows of small function keys.
+SKAI lettering replaces original branding. CC BY 4.0 attribution above continues.

@@ -1,0 +1,19 @@
+*.iml
+.gradle/
+.kotlin/
+local.properties
+.idea/
+**/build/
+*.apk
+
+# Machine settings and signing credentials
+local.properties
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+# Old generated reports (current review is BUILD_REVIEW.md)
+LINT_REPORT.html
+LINT_REPORT.txt
+TEST_RESULTS.xml

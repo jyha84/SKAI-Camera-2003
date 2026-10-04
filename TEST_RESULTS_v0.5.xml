@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites><testsuite name="com.skai.camera2003.PhotoRepositoryTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-04T06:00:01" hostname="bd5ce0f3d368" time="4.586">
+  <properties />
+  <testcase name="refusesFileUrisForSharing" classname="com.skai.camera2003.PhotoRepositoryTest" time="2.885" />
+  <testcase name="sharesOriginalContentUriWithTemporaryReadPermission" classname="com.skai.camera2003.PhotoRepositoryTest" time="0.054" />
+  <testcase name="galleryRowsExcludeOtherImagesAndRecoverOlderPhotoDates" classname="com.skai.camera2003.PhotoRepositoryTest" time="0.069" />
+  <testcase name="olderAndroidCanListDecodeAndSharePhotosButProviderDoesNotExposeOtherFiles" classname="com.skai.camera2003.PhotoRepositoryTest" time="1.578" />
+  <system-out />
+  <system-err />
+</testsuite><testsuite name="com.skai.camera2003.RetroImageTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-04T06:00:05" hostname="bd5ce0f3d368" time="0.767">
+  <properties />
+  <testcase name="immutableSourceProducesVgaJpegWithBurnedInDate" classname="com.skai.camera2003.RetroImageTest" time="0.486" />
+  <testcase name="cameraSettingsSurviveRestart" classname="com.skai.camera2003.RetroImageTest" time="0.113" />
+  <testcase name="dateOffIgnoresDateAndDigitalStyleChangesThePhoto" classname="com.skai.camera2003.RetroImageTest" time="0.109" />
+  <testcase name="dateChangesOnlyTheStampAndPreviewKeepsSameAspectRatio" classname="com.skai.camera2003.RetroImageTest" time="0.059" />
+  <system-out />
+  <system-err />
+</testsuite></testsuites>
