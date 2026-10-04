@@ -22,7 +22,9 @@ Kotlin · Jetpack Compose · CameraX로 만들었으며 현재 버전은 **0.10.
 현재 설치 파일은 `SKAI-Camera-2003-v0.10-StarTAC.apk`입니다. Android 6.0(API 23) 이상에서 설치할 수 있습니다.
 기존 클라우드 빌드와 같은 서명이므로 이전 SKAI APK 위에 업데이트 설치할 수 있습니다.
 
-GitHub 저장소와 Release 업로드는 아직 완료되지 않았습니다. 업로드 후 Release에 설치 APK를 첨부할 예정입니다.
+[GitHub 저장소](https://github.com/jyha84/SKAI-Camera-2003) · [최신 APK Release](https://github.com/jyha84/SKAI-Camera-2003/releases/latest)
+
+소스는 Public으로 공개하며 설치 APK와 SHA256 파일은 Release에서 제공합니다.
 
 ## 조작
 
@@ -57,7 +59,7 @@ Windows에서는 `gradlew.bat`을 사용합니다.
 APK 출력: `app/build/outputs/apk/debug/app-debug.apk`.
 
 `.github/workflows/android.yml`에는 GitHub Actions 빌드·Lint·기능 테스트 및 APK Artifact 업로드를 준비했습니다.
-Actions 실행 결과는 저장소에 업로드한 뒤 확인할 수 있습니다. 개발 환경마다 디버그 서명은 달라질 수 있습니다.
+[Actions](https://github.com/jyha84/SKAI-Camera-2003/actions)에서 실행 결과를 확인할 수 있습니다. 개발 환경마다 디버그 서명은 달라질 수 있습니다.
 
 ## 공개 배포 안내
 
